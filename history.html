@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>History</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Historial de Contraseñas</h1>
+
+        <button id="darkModeToggle">Activar Modo Oscuro</button>
+
+        <nav>
+            <a href="index.html" class="nav-button">Ir a Generador</a>
+        </nav>
+
+        <div id="messageContainer" class="message-container"></div>
+
+        <section class="saved-passwords">
+            <h2>Todas tus Contraseñas Guardadas</h2>
+            <div class="input-group add-existing">
+                <label for="existingPasswordName">Nombre:</label>
+                <input type="text" id="existingPasswordName" placeholder="Nombre (ej. Mi Banco)">
+            </div>
+            <div class="input-group add-existing">
+                <label for="existingPasswordValue">Contraseña:</label>
+                <input type="text" id="existingPasswordValue" placeholder="Contraseña existente aquí">
+            </div>
+            <button id="addExistingPasswordBtn" class="add-btn">Añadir Contraseña Existente</button>
+            <hr>
+
+            <div id="passwordList" class="password-list">
+                <p id="noPasswordsMessage">No hay contraseñas guardadas aún.</p>
+            </div>
+        </section>
+    </div>
+
+</div>
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Confirmar Eliminación</h2>
+            <p>¿Estás seguro de que quieres eliminar esta contraseña?</p>
+            <div class="modal-buttons">
+                <button id="confirmDeleteBtn" class="confirm-btn">Sí, eliminar</button>
+                <button id="cancelDeleteBtn" class="cancel-btn">No, cancelar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="history.js"></script> 
+</body>
+</html>

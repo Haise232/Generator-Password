@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+
+    <title>PassWord Generator</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Gestor de Contraseñas</h1>
+
+        <button id="darkModeToggle">Activar Modo Oscuro</button>
+
+        <nav>
+            <a href="history.html" class="nav-button">Ir a Historial</a>
+        </nav>
+
+        <section class="password-generator">
+            <h2>Generar Contraseña</h2>
+            <div class="input-group">
+                <label for="passwordLength">Longitud:</label>
+                <input type="number" id="passwordLength" value="12" min="4" max="64">
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="includeUppercase" checked>
+                <label for="includeUppercase">Mayúsculas (ABC)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="includeLowercase" checked>
+                <label for="includeLowercase">Minúsculas (abc)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="includeNumbers" checked>
+                <label for="includeNumbers">Números (123)</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="includeSymbols" checked>
+                <label for="includeSymbols">Símbolos (!@#$)</label>
+            </div>
+            <button id="generatePassword">Generar Contraseña</button>
+            <div class="generated-password-container">
+                <input type="text" id="generatedPassword" readonly placeholder="Tu contraseña generada aparecerá aquí">
+                <button id="copyPassword">Copiar</button>
+            </div>
+            <div class="save-password-section">
+                <input type="text" id="passwordName" placeholder="Nombre para la contraseña (ej. Google)">
+                <button id="savePassword">Guardar Contraseña</button>
+            </div>
+        </section>
+
+        <div id="messageContainer" class="message-container"></div>
+
+        <section class="saved-passwords">
+            <h2>Contraseñas Guardadas</h2>
+            <div id="passwordList" class="password-list">
+                <p id="noPasswordsMessage">No hay contraseñas guardadas aún.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Confirmar Eliminación</h2>
+            <p>¿Estás seguro de que quieres eliminar esta contraseña?</p>
+            <div class="modal-buttons">
+                <button id="confirmDeleteBtn" class="confirm-btn">Sí, eliminar</button>
+                <button id="cancelDeleteBtn" class="cancel-btn">No, cancelar</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
